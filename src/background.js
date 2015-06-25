@@ -1,19 +1,23 @@
-chrome.extension.onMessage.addListener(
-    function(request, sender, sendResponse) {
-        if (request.action === "prefs") {
-            var prefString = localStorage.prefs;
-            if (prefString === undefined) {
-                sendResponse(undefined);
-            } else {
-                sendResponse(JSON.parse(localStorage.prefs));
-            }
-        }
-    });
+chrome.contextMenus.create({
+    title:"Decode QR and push to phone",
+    contexts:["image"],
+    onclick:function(info) {
+        handleImageURL(info.srcUrl);
+    }
+});
 
-function click(e) {
-    chrome.tabs.query({currentWindow:true, active:true}, function(tabs) {
-        console.log("background.js : click()");
-    });
+function handleImageURL(url) {
+    console.log(url);
 }
 
-chrome.browserAction.onClicked.addListener(click);
+chrome.contextMenus.create({
+    title:"Encode as QR and push to phone",
+    contexts:["selection"],
+    onclick:function(info) {
+        encodeSelection(info);
+    }
+});
+
+function encodeSelection(text) {
+    console.log(text);
+}
