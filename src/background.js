@@ -23,14 +23,14 @@ function handleImageURL(imgUrl) {
 }
 
 // encode process
-chrome.contextMenus.create({
-  title:"Encode as QR and push to phone",
-  contexts:["selection"],
-  onclick:function(info) {
-    encodeSelection(info);
-  }
-});
+// chrome.contextMenus.create({
+//   title:"Encode as QR and push to phone",
+//   contexts:["selection"],
+//   onclick:function(info) {
+//     encodeSelection(info);
+//   }
+// });
 
-function encodeSelection(text) {
-  console.log(text);
-}
+// function encodeSelection(text) {
+//   console.log(text);
+// }
