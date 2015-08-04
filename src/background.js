@@ -1,6 +1,6 @@
 // init relevant help methods
 var qr = new QCodeDecoder();
-PushBullet.APIKey = "AarVxH0Llo7VicB8oEHtcF46maSVIyKD"
+PushBullet.APIKey = "[YOUR OWN API KEY]"
 var deviceInfo = PushBullet.devices();
 var deviceId = deviceInfo.devices[0].iden;
 
